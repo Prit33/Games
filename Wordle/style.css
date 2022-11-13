@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --font-default: 'Nunito', sans-serif;
+  --colour-bg: rgb(235, 235, 240);
+  --colour-bg-shadow: rgb(200, 200, 220);
+  --colour-bg-highlight: rgb(252, 252, 255);
+  --colour-text: rgb(150, 150, 150);
+  
+  --colour-green: rgb(119, 219, 143);
+  --colour-yellow: rgb(242, 228, 121);
+  
+  --box-shadow-bg-sharp:
+    -1px -1px 1px 0px inset var(--colour-bg-shadow),
+    1px 1px 1px 0px inset var(--colour-bg-highlight),
+    5px 5px 5px 1px var(--colour-bg-shadow),
+    0px 0px 0px 0px var(--colour-bg-highlight);
+  --box-shadow-bg-sharp-inset:
+    5px 5px 5px 1px inset var(--colour-bg-shadow),
+    -1px -1px 1px 0px inset var(--colour-bg-highlight),
+    0px 0px 0px 0px var(--colour-bg-shadow),
+    0px 0px 0px 0px var(--colour-bg-highlight);
+  --box-shadow-bg-sharp-inset-deep:
+    15px 15px 15px 1px inset var(--colour-bg-shadow),
+    -1px -1px 1px 0px inset var(--colour-bg-highlight),
+    0px 0px 0px 0px var(--colour-bg-shadow),
+    0px 0px 0px 0px var(--colour-bg-highlight);
+  --box-shadow-bg-sharp-level:
+    0px 0px 0px 0px inset var(--colour-bg-shadow),
+    0px 0px 0px 0px inset var(--colour-bg-highlight),
+    0px 0px 0px 0px var(--colour-bg-shadow),
+    0px 0px 0px 0px var(--colour-bg-highlight);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--colour-bg);
+  font-family: var(--font-default);
+}
+
+#app-wrapper {
+  color: var(--colour-text);
+  margin: 50px auto;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr) auto 1fr;
+  gap: 10px;
+}
+
+#kb-wrapper {
+  grid-column: 1 / -1;
+  height: 100px;
+  position: relative;
+  margin: 20px 0;
+}
+
+.kb-row {
+  position: absolute;
+  display: grid;
+  gap: 5px;
+  height: 26%;
+  justify-items: center;
+  align-items: center;
+}
+
+#kb-row-0 { /* qwer */
+  width: 100%;
+  top: 0;
+  left: 0;
+  grid-template-columns: repeat(10, 1fr)
+}
+
+#kb-row-1 { /* asdf */
+  width: 90%;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  grid-template-columns: repeat(9, 1fr)
+}
+
+#kb-row-2 { /* zxcv */
+  width: 70%;
+  bottom: 0;
+  left: 10%;
+  grid-template-columns: repeat(7, 1fr)
+}
+
+.kb-key {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  box-shadow: var(--box-shadow-bg-sharp-inset);
+  transition: 0.3s;
+}
+
+.kb-key:hover {
+  cursor: pointer;
+  box-shadow: var(--box-shadow-bg-sharp) !important;
+}
+
+.kb-key:hover > span {
+  opacity: 1;
+  transform: scale(1.1) !important;
+}
+
+.kb-key > span {
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.kb-key.relevant {
+  box-shadow: var(--box-shadow-bg-sharp-level);
+}
+
+.kb-key.relevant > span {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#reset-btn {
+  grid-column: 1 / -1;
+}
+
+.grid-square {
+  user-select: none;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  box-shadow: var(--box-shadow-bg-sharp-inset);
+  transition:
+    all 0.3s,
+    color 0.1s;
+}
+
+.grid-square.deep {
+  box-shadow: var(--box-shadow-bg-sharp-inset-deep);
+}
+
+.grid-square.green {
+  color: var(--colour-bg-highlight);
+  background-color: var(--colour-green);
+  box-shadow: var(--box-shadow-bg-sharp);
+}
+
+.grid-square.yellow {
+  background-color: yellow;
+  background-color: var(--colour-yellow);
+  box-shadow: var(--box-shadow-bg-sharp);
+}
+
+.grid-square > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:
+    scale(1.5)
+    translate(-30%, -30%);
+  transition: 0.3s;
+}
+
+.grid-square.deep > span {
+  opacity: 0;
+  transform:
+    scale(1)
+    translate(-50%, -50%);
+}
+
+.btn-wide {
+  justify-self: center;
+  width: 50%;
+  grid-column: 1 / -1;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  font-size: 25px;
+  font-family: var(--font-default);
+  font-weight: 600;
+  background-color: var(--colour-bg);
+  box-shadow: var(--box-shadow-bg-sharp);
+  transition: 0.3s;
+}
+
+.btn-wide:hover {
+  outline: none;
+  box-shadow: var(--box-shadow-bg-sharp-inset);
+}
+
+.btn-wide > p {
+  margin: 0;
+  color: var(--colour-text);
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.btn-wide:hover > p {
+  transform: scale(0.9);
+}
