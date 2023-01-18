@@ -5,18 +5,18 @@ body{
     margin: 0;
     padding: 0;
     overflow-X: hidden;
+    background-color: rgba(164, 81, 167, 0.315);
+    min-height: 100vh;
+}
+
+.flush{
+    top:5%;
     background: linear-gradient(200deg, rgba(255, 187, 1, 0.932)
     1%,rgba(255, 0, 128, 0.966) 65%,rgba(110, 1, 252, 0.918) 
     100%);
-    min-height: 100vh;
-}
-.flush{
-    top:5%;
     width: 100%;
     height:85px;
-    background-color: rgb(26, 26, 26);
 }
-
 
 .hello {
     /* content:'  '; */
@@ -27,9 +27,8 @@ body{
     /* border-bottom-left-radius: 55px ;
     border-bottom-right-radius: 55px ; */
     top:0px;
-    
-    backdrop-filter: blur(10px);
-    background: rgba(85, 85, 85, 0.5);
+    backdrop-filter: blur(5px);
+    /* background: rgba(158, 158, 158, 0.5); */
     /* mix-blend-mode:multiply; */
     color: #f1f1f1;
     z-index: 50;
@@ -37,49 +36,36 @@ body{
 
 
 .hello h1{
-    
-   position: relative;
-   font-family:Heebo;
+    position: relative;
+    font-family:Lobster;
     left:10%;
 }
 
 
 .buttons{
-    
-    position:fixed;
-    top: 0;
-    left: 80%;
-    width: 100%;
-
-    display:flex;
-    align-items: center;
-    /* z-index: 10000; */
-} 
-
-.buttons button{
-    
     background-color:rgb(224, 224, 224,0.5);
-    position: relative;
+    position: absolute;
     height: 50px;
     width: 10%;
-    right: auto;
+    font-weight: 300;
     margin: 15px;
-    border:none;
-    /* padding:6px 25px; */
-    border-radius: 55px;
-}
-.buttons a{
-    color:rgb(0, 0, 0);
-    text-decoration: none;
     font-size: 21px;
+    border:none;
+    border-radius: 55px;
+    top: 0;
+    left: 80%;
+    color:#000;
     font-family: Lobster;
-    
-}
+    cursor: pointer;
+} 
+
+
 
 .hello:hover{
-    background-color: rgba(44, 44, 44, 0.8);
+    background: linear-gradient(-300deg, rgba(255, 187, 1, 0.932)
+    1%,rgba(255, 0, 128, 0.966) 65%,rgba(110, 1, 252, 0.918) 
+    100%);
     /* box-shadow: -10px 5px 3px rgba(44, 44, 44, 0.533); */
-
 }
 .watermark{
 
@@ -95,8 +81,8 @@ body{
 }
 
 
-.works{
-    
+.works{   
+    /* position:absolute;  */
     margin-top: 150px;
     margin-left: 50px;
     display: flex;
@@ -104,56 +90,47 @@ body{
     align-items: center;
     flex-wrap: wrap;
     text-align:center;
-
-
+   
 }
 
 .Aim-Training{
-  
-    height: 130px;
+    color: #fff;
+    font-family:Lobster;
+    font-size: 35px;
+    height: 160px;
     width: 75%;
     margin: 15px;
     padding: 15px;
     border: none;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     border-radius: 45px;
-    background-color: blueviolet;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
     
 }
-.Aim-Training a{
-    color:#f1f1f1;
-    position:absolute;
-     font-family: Heebo;
-    font-size: 35px;
-    text-decoration: none;
-    top:30%;
-    left:25%;
-} 
+
 
 .Aim-Training:hover{
-    background:rgb(78, 19, 172,0.8);
+    background-color: rgba(193, 8, 226, 0.836);
     box-shadow: 14px 14px 30px rgba(39, 39, 39, 0.8), -14px -14px 30px rgb(255, 240, 240, 0.79)
-    
+    /* box-shadow: inset 8px 8px 16px 0 rgba(0, 0, 0, 0.2),
+    inset -8px -8px 16px 0 rgba(255, 255, 255, 0.4);  */
 }
 .Breakout {
-    height: 130px;
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
     width: 75%;
     margin: 15px;
     padding: 15px;
     border: none;
     backdrop-filter: blur(10px);
     border-radius: 45px;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
 }
-.Breakout a{
-    color:#f1f1f1;
-    position:relative;
-    font-family: Heebo;
-    font-size: 35px;
-    text-decoration: none;
-    top:10%;
-    left:33%;
 
-}
 .Breakout:hover{
     background-color: rgba(25, 177, 106, 0.836);
     box-shadow: 14px 14px 30px rgba(39, 39, 39, 0.8), -14px -14px 30px rgb(255, 240, 240, 0.79)
@@ -162,23 +139,18 @@ body{
 }
 
 .Space-War{
-    height: 130px;
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
     width: 75%;
     margin: 15px;
     padding: 15px;
     border: none;
     backdrop-filter: blur(10px);
     border-radius: 45px;
-}
-.Space-War a{
-    color:#f1f1f1;
-    position:relative;
-    font-family: Heebo; 
-    /* letter-spacing: 3px; */
-    font-size: 35px;
-    text-decoration: none;
-    top:30%;
-    left:25%;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
 }
 
 .Space-War:hover{
@@ -188,13 +160,18 @@ body{
     /* box-shadow: -10px 5px 3px rgba(44, 44, 44, 0.533); */
 }
 .Wordle{
-    height: 130px;
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
     width: 75%;
     margin: 15px;
     padding: 15px;
     border: none;
     backdrop-filter: blur(10px);
     border-radius: 45px;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
     
 }
 .Wordle:hover{
@@ -203,25 +180,21 @@ body{
     
     /* box-shadow: -10px 5px 3px rgba(44, 44, 44, 0.533); */
 }
-.Wordle a{
-    color:#f1f1f1;
-    position:relative;
-    /* letter-spacing: 3px; */
-    font-size: 35px;
-    font-family: Heebo;
-    text-decoration: none;
-    top:30%;
-    left:10%;
-}
+
 .Transition{
    /* box-shadow: inset 12px 12px 12px #74e687, inset -12px -50px 50px rgb(190, 56, 56); */
-   height: 130px;
-   width: 75%;
-   margin: 15px;
-   padding: 15px;
-   border: none;
-   backdrop-filter: blur(10px);
-   border-radius: 45px;
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
+    width: 75%;
+    margin: 15px;
+    padding: 15px;
+    border: none;
+    backdrop-filter: blur(10px);
+    border-radius: 45px;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
 }
 .Transition:hover{
     background-color: rgb(61, 61, 61,0.89);
@@ -230,41 +203,55 @@ body{
     /* box-shadow: -10px 5px 3px rgba(44, 44, 44, 0.533); */
     
 }
-.Transition a{
-    color:#f1f1f1;
-    position:relative;
-    /* letter-spacing: 3px; */
-    font-family: Heebo;
-    font-size: 35px;
-    text-decoration: none;
-    top:30%;
-    left:35%;
-}
+
 
 .pong{
-   
-    height: 130px;
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
     width: 75%;
     margin: 15px;
     padding: 15px;
     border: none;
     backdrop-filter: blur(10px);
     border-radius: 45px;
-}
-.pong a{
-    color:#f1f1f1;
-    position:relative;
-    /* letter-spacing: 3px; */
-    font-family: Heebo; 
-    font-size: 35px;
-    text-decoration: none;
-    top:30%;
-    left:34%;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
+   
 }
 
 .pong:hover{
-    background-color: rgba(8, 50, 98, 0.836);
+    background-color: rgb(238, 216, 20);
     box-shadow: 14px 14px 30px rgba(39, 39, 39, 0.8), -14px -14px 30px rgb(255, 240, 240, 0.79)
     
     /* box-shadow: 14px 14px 30px #2a8ac2, -14px -14px 30px rgb(37, 37, 37); */
 }
+
+
+
+.visualizer{
+    color:#f1f1f1;
+    font-family: Lobster;
+    font-size: 35px;
+    height: 160px;
+    width: 75%;
+    margin: 15px;
+    padding: 15px;
+    border: none;
+    backdrop-filter: blur(10px);
+    border-radius: 45px;
+    background-color: rgb(60, 39, 92);
+    cursor: pointer;
+   
+}
+
+.visualizer:hover{
+    background-color: rgb(238, 216, 20);
+    box-shadow: 14px 14px 30px rgba(39, 39, 39, 0.8), -14px -14px 30px rgb(255, 240, 240, 0.79)
+}
+
+
+
+
+ 
